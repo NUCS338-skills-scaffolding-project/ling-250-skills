@@ -63,7 +63,7 @@ Some consonant clusters are allowed at the start of a word:
 
 Others aren't:
 
-- **pt-*, **tl-*, **vr-* — impossible in English word-initial position.
+- *pt-*, *tl-*, *vr-* — impossible in English word-initial position.
 
 But the same sequences can appear elsewhere in the word:
 
