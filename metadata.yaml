@@ -2,4 +2,8 @@ course_id: "LING-250"
 course_name: "Sound Patterns in Human Language: Intro to Phonetics & Phonology"
 course_type: "humanities"
 spoc_contact: "lucilleoh@u.northwestern.edu"
-skills_used: []
+skills_used: [give-contrastive-hint
+              repair_misconceptions
+              escalate_hint_level_gradually
+              validate_pre_knowledge
+              diagnose_prerequisite_gaps]
