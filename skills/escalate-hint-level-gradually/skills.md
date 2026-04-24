@@ -1,65 +1,148 @@
 ---
-skill_id: "skill-name"
-name: "Human Readable Name"
+skill_id: "escalate-hint-level-gradually"
+name: "Escalate Hint Level Gradually"
 skill_type: "instructional"
-tags: ["topic1", "topic2"]
+tags: ["phonetics", "hints", "scaffolding", "socratic", "stuck"]
 python_entry: "logic.py"
 ---
 
-# Skill Name
+# Escalate Hint Level Gradually
 
 ## Description
-What does this skill do? Keep it to 2-3 sentences.
-This will appear in the shared catalog so make it clear and concise.
-
-## Skill Type
-- **Type:** instructional OR code
-- **Course Focus:** Humanities OR CS OR Both
+When a student is stuck on a question, produces the next-most-specific
+hint without revealing the answer. Supports pre-built hint ladders for
+common HW1 question types (feature classification, midsagittal diagram
+identification, IPA transcription, multi-select feature matching) and
+accepts custom ladders from the orchestrator for other question shapes.
+Stateless — the orchestrator tracks which level has already been given.
 
 ## When to Trigger
-- Trigger condition 1
-- Trigger condition 2
-- Trigger condition 3
 
----
-<!-- FOR INSTRUCTIONAL SKILLS: Complete this section -->
+### Fires when:
+- Student has attempted the question and is stuck ("I don't know,"
+  "I'm lost," silence after an attempt, or a wrong answer followed by
+  a request for help)
+- Student has already received a hint and needs a more specific one
+- Orchestrator determines the student is in a productive-struggle zone,
+  not a misconception zone
+
+### Does NOT fire when:
+- Student hasn't attempted the question yet — ask them to try first
+- Student's wrong answer reveals a misconception rather than being
+  stuck (use `repair-misconceptions` instead)
+- Student lacks prerequisite knowledge entirely (use
+  `diagnose-prerequisite-gaps` instead)
+- Student is at max hint level and still stuck — that's a signal to
+  step back, not to hint harder
+
+### Boundary cases:
+- **First hint in a session**: call with `current_level: 0`, get level
+  1 hint
+- **Student has been hinting across multiple turns**: orchestrator
+  maintains `current_level` in session state and increments each call
+- **Unfamiliar question shape**: pass a `custom_ladder` (a list of
+  hint strings) and the skill will walk through it the same way
 
 ## Tutor Stance
-Describe the non-negotiable rules for how the tutor should behave.
+- Start abstract, end concrete. Early hints invite the student to
+  access what they already know; later hints anchor them to a specific
+  observation.
+- Never jump a level. If the current level didn't click, go to the
+  next one, not three levels down. The gradient matters.
+- When max level is reached and the student is still stuck, do NOT
+  reveal the answer. That's a signal to switch skills — probably
+  `diagnose-prerequisite-gaps` or a concept refresher.
+- Between hints, give the student time to try again. Hints are
+  scaffolding, not narration.
 
 ## Flow
-### Step 1 — Step Title
-Describe what to do in this step.
 
-### Step 2 — Step Title
-Describe what to do in this step.
+### Step 1 — Get the next hint
+Call `run()` with `hint_type` (or `custom_ladder`) and `current_level`.
+The skill returns the hint text and the new level.
+
+### Step 2 — Deliver the hint and wait
+Give the hint as a single message. Then pause. Let the student try
+again before hinting further.
+
+### Step 3 — If the student responds correctly, stop hinting
+Acknowledge the work and move on. Don't keep hinting a question they've
+now answered.
+
+### Step 4 — If they're still stuck, escalate
+Re-call the skill with the incremented level. Repeat until resolution
+or until `is_max_level` is true.
+
+### Step 5 — At max level, switch skills
+If the student is still stuck after the final hint, the orchestrator
+should step back: either diagnose a prerequisite gap, repair a
+misconception, or acknowledge struggle and move on. Do not give the
+answer.
 
 ## Safe Output Types
-What the tutor IS allowed to produce.
+- Hint text from the returned ladder (verbatim or lightly adapted for
+  the student's tone)
+- Short acknowledgments between hints ("take your time")
+- A transition line when max level is reached ("we've worked through
+  this from several angles — let me ask a different question")
 
 ## Must Avoid
-What the tutor must NEVER do.
+- Giving the answer, even when the student asks directly
+- Jumping multiple levels at once
+- Hinting on a question the student hasn't yet attempted
+- Adding sub-hints inside a single hint (diluting the gradient)
+- Continuing to hint after max level — the ladder ends deliberately
 
 ## Example Exchange
-> **Student:** "Example student message"
+> **Student:** "For question 4, I have no idea what the manner of [θ]
+> is."
 >
-> **Tutor:** "Example tutor response"
+> **Tutor:** *(level 1 hint)* "This is a good one to work through
+> carefully. What do you notice when you say [θ] a few times in a row?"
+>
+> **Student:** "I don't know, it's just... a th sound."
+>
+> **Tutor:** *(level 2 hint)* "Every consonant has three features:
+> place, manner, and voicing. The question is asking about manner —
+> which is about what the airflow is doing. Is it stopped completely,
+> is there friction, is it free?"
+>
+> **Student:** "Oh... I think it's friction? My tongue is between my
+> teeth and air is still coming through."
+>
+> **Tutor:** "Exactly — that's a fricative. Air flowing with turbulence
+> through a narrow gap."
 
----
-<!-- FOR CODE SKILLS: Complete this section -->
+## Disambiguation from Other Skills
+- `give-contrastive-hint` produces *a* hint — specifically, a contrast
+  between two sounds. **This skill** produces a *series* of hints that
+  escalate in specificity for one question.
+- `repair-misconceptions` fires when the student's stuckness is caused
+  by a wrong mental model. **This skill** fires when the mental model
+  is fine but access to the answer is blocked.
+- `diagnose-prerequisite-gaps` fires when hints aren't landing because
+  the student lacks a foundational concept. **This skill** assumes
+  prerequisites are in place.
 
-## Inputs
-Describe what inputs the logic.py function expects.
+## Inputs Expected by logic.py
+- `current_level` (int): 0 means no hint given yet; the skill returns
+  level 1. N means N hints given; skill returns level N+1.
+- `hint_type` (str, optional): one of the known catalog keys (see
+  `list_hint_types()`)
+- `custom_ladder` (list of str, optional): a custom list of hints,
+  lowest to highest specificity. Overrides `hint_type`.
 
-## Outputs
-Describe what the function returns.
+## Outputs Returned by logic.py
+A dict:
+- `next_level` (int): the level of the hint being returned
+- `hint_text` (str or None): the hint, or None if at max
+- `is_max_level` (bool): True if `next_level` is the last hint in the
+  ladder; subsequent calls will return None
+- `total_levels` (int): how many hints are in this ladder total
+- `error` (str or None)
 
-## Usage
-```python
-from logic import run
-result = run({"key": "value"})
-print(result)
-```
-
-## Notes
-Any additional notes for teams importing this skill.
+## Notes for Reusers
+The `HINT_LADDERS` catalog is HW1-specific. To extend to other
+assignments, add new keys to the catalog or pass `custom_ladder` per
+call. The ladder design philosophy (abstract → concrete, never reach
+the answer) is the reusable pattern — the specific hint wording is not.
