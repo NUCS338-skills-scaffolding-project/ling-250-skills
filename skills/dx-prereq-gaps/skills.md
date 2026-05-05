@@ -1,5 +1,5 @@
 ---
-skill_id: "counter-example"           
+skill_id: "dx-prereq-gaps"           
 name: "Diagnose Prerequisite Gaps"              
 skill_type: "instructional"
 stance: "socratic"                    
