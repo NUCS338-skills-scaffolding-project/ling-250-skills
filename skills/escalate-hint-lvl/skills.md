@@ -43,7 +43,7 @@ Stateless — the orchestrator tracks which level has already been given.
 ### Does NOT fire when:
 - Student hasn't attempted the question yet — ask them to try first
 - Student's wrong answer reveals a misconception rather than being
-  stuck (use `repair-misconceptions` instead)
+  stuck (use `repair-miscon` instead)
 - Student lacks prerequisite knowledge entirely (use
   `dx-prereq-gaps` instead)
 - Student is at max hint level and still stuck — that's a signal to
@@ -128,10 +128,10 @@ answer.
 > through a narrow gap."
 
 ## Disambiguation from Other Skills
-- `give-contrastive-hint` produces *a* hint — specifically, a contrast
+- `contrastive-hint` produces *a* hint — specifically, a contrast
   between two sounds. **This skill** produces a *series* of hints that
   escalate in specificity for one question.
-- `repair-misconceptions` fires when the student's stuckness is caused
+- `repair-miscon` fires when the student's stuckness is caused
   by a wrong mental model. **This skill** fires when the mental model
   is fine but access to the answer is blocked.
 - `dx-prereq-gaps` fires when hints aren't landing because

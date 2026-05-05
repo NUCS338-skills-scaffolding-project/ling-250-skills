@@ -11,7 +11,7 @@ learning_goal_tags:
   - "request-targeted-help"
   - "reflect-on-progress"
 trigger_signals:
-  - "validate-pre-knowledge-fail"
+  - "validate-prereqs-fail"
   - "cannot-localize-stuck-point"
   - "repeated-restart-without-progress"
   - "vague-references-to-named-concepts"
@@ -37,7 +37,7 @@ report indicating what the student does and doesn't yet know.
 ## When to Trigger
 
 ### Fires when:
-- `validate-pre-knowledge` returned `fail` for a concept
+- `validate-prereqs` returned `fail` for a concept
 - Student is stuck mid-assignment in a way that suggests a foundational
   gap (not a misconception, not just a hint-worthy stuck moment)
 - Tutor needs to plan a remediation session and wants to know exactly
@@ -45,9 +45,9 @@ report indicating what the student does and doesn't yet know.
 
 ### Does NOT fire when:
 - Student has a wrong mental model rather than a missing one — use
-  `repair-misconceptions` instead
+  `repair-miscon` instead
 - Student is stuck on a specific question within a concept they
-  otherwise grasp — use `escalate-hint-level-gradually` instead
+  otherwise grasp — use `escalate-hint-lvl` instead
 - The gap is already known (e.g. the student said "I've never heard
   of the IPA" — no diagnosis needed, just teach it)
 
@@ -79,7 +79,7 @@ report indicating what the student does and doesn't yet know.
 ## Flow
 
 ### Step 1 — Identify the concept to diagnose
-Usually driven by a prior `validate-pre-knowledge` fail. Call
+Usually driven by a prior `validate-prereqs` fail. Call
 `run({"action": "get_probes", "concept": <concept_id>})` to retrieve
 the ordered list of diagnostic sub-probes.
 
@@ -122,7 +122,7 @@ narrow) a single corrective exchange. Do NOT use this skill to teach
   examined
 
 ## Example Exchange
-> *(Prior context: student failed validate-pre-knowledge on
+> *(Prior context: student failed validate-prereqs on
 > "place_of_articulation")*
 >
 > **Tutor:** "Okay, let me figure out where the sticking point is —
@@ -149,13 +149,13 @@ narrow) a single corrective exchange. Do NOT use this skill to teach
 > consonants, and then come back to the question."
 
 ## Disambiguation from Other Skills
-- `validate-pre-knowledge` asks one probe per concept and returns a
+- `validate-prereqs` asks one probe per concept and returns a
   coarse pass/weak/fail. **This skill** goes deeper — given a known
   weakness, it isolates *which specific sub-concept* is the gap.
-- `repair-misconceptions` fires when the student has a confident wrong
+- `repair-miscon` fires when the student has a confident wrong
   model. **This skill** fires when the student is missing (or hazy
   on) a piece.
-- `escalate-hint-level-gradually` scaffolds a student through a
+- `escalate-hint-lvl` scaffolds a student through a
   specific stuck question. **This skill** steps out of the question to
   diagnose what's missing upstream.
 
@@ -197,9 +197,9 @@ For `action: "summarize"`:
 
 ## Notes for Reusers
 The `DIAGNOSTICS` catalog is HW1-specific and parallels the concepts
-in `validate-pre-knowledge`. Each diagnostic is a 2–4 step ladder from
+in `validate-prereqs`. Each diagnostic is a 2–4 step ladder from
 most foundational to most specific. Adding a new concept requires:
 the concept ID, an ordered list of sub-probes (foundational → specific),
 and a remediation hint per sub-probe. Judgment is the orchestrator's
 job — this skill holds structure, not scoring. Same design decision as
-`validate-pre-knowledge`.
+`validate-prereqs`.
