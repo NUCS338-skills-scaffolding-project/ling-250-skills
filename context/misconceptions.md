@@ -87,3 +87,42 @@ student confusions through questioning rather than direct correction.
 **Correction target:** Ask the student to compare *catch it* [kætʃ ɪt] with *cat ship* [kæt ʃɪp]. Do these sound different? Why?
 
 ---
+## 9. English "r" is the IPA [r]
+
+**Misconception:** The IPA symbol [r] is the English r sound in *red*, *run*, *very*.
+
+**Why it's wrong:** [r] in IPA is a **trill** — a series of rapid taps from the tongue tip against the alveolar ridge. English does NOT use the trill. The English r is the **rhotic approximant [ɹ]**, a single approximation without contact. Spanish *que rico*, Italian *rosso*, and Scottish *bright red* use the trill [r].
+
+**Correction target:** Ask the student to say *red* in English, then try saying *rico* the way a native Spanish speaker would. What is your tongue doing differently?
+
+---
+
+## 10. Doubled consonant letters are pronounced as the doubled letter
+
+**Misconception:** The "tt" in *butter* is pronounced [t] because that's the letter.
+
+**Why it's wrong:** In American English, *butter* is pronounced [bʌɾəɹ] with a tap [ɾ], not [t]. The tap appears between vowels when the first vowel is stressed and the second is unstressed: *butter*, *water*, *ladder*, *city*, *better*. The "tt"/"dd" spelling doesn't change — the environment does. Outside that environment (e.g., stressed second syllable, *attest*) the underlying [t] surfaces.
+
+**Correction target:** Ask the student to say *butter* and *attest* slowly, paying attention to what the tongue does at the middle consonant. Are they the same?
+
+---
+
+## 11. The IPA chart is just a list
+
+**Misconception:** The IPA chart is a flat list of symbols you have to memorize one by one.
+
+**Why it's wrong:** The chart is **organized**. Columns are place of articulation (left = front of mouth, right = back). Rows are manner of articulation. When two symbols share a cell, they differ only in voicing — voiceless on the left, voiced on the right. Once you know the structure, you can look up any consonant by its three features rather than memorizing each symbol.
+
+**Correction target:** Ask the student to find the cell for "alveolar fricative" on the chart. What two symbols are there? What's the only difference between them?
+
+---
+
+## 12. The formal description of a consonant always names all three features
+
+**Misconception:** To describe a consonant formally, you always have to say voicing AND place AND manner — e.g., "voiced bilabial nasal stop."
+
+**Why it's wrong:** Predictable features are conventionally omitted. Since all English nasals are voiced and have complete oral closure, [m] is described as "bilabial nasal" — not "voiced bilabial nasal stop." The convention is to mention only the features that distinguish a sound from others sharing the same context. (See Day 3 slide 18.)
+
+**Correction target:** Ask the student: "What does saying 'voiced' add to the description of [m]? Is there a voiceless [m] in English?"
+
+---
