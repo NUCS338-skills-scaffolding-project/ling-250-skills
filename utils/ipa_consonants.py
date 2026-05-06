@@ -167,6 +167,27 @@ CONSONANTS = {
            "rounded": True},
 }
 
+# Non-English reference symbols students might confuse with English ones.
+# These are NOT in the English consonant inventory but are mentioned in
+# Day 3 slides (e.g., the trill [r] is contrasted with English's [ɹ]).
+# Kept separate from CONSONANTS so feature lookups for English don't
+# return false positives.
+NON_ENGLISH_REFERENCE = {
+    "r":  {"place": "alveolar",
+           "manner": "trill",
+           "voicing": "voiced",
+           "example_languages": ["Spanish (rico)", "Italian (rosso)",
+                                 "Scottish English (bright red)"],
+           "english_counterpart": "ɹ",
+           "note": (
+               "[r] in IPA is a trill — a series of rapid taps from the "
+               "tongue tip against the alveolar ridge. English does NOT "
+               "use the trill. The English r in red, run, very is the "
+               "rhotic approximant [ɹ], a single approximation without "
+               "any tongue contact. When transcribing English, use [ɹ]."
+           )},
+}
+
 # Place-of-articulation descriptions.
 PLACES = {
     "bilabial": {
