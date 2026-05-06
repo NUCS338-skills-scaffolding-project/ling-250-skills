@@ -91,6 +91,76 @@ HINT_LADDERS = {
         "isolation. Feel for each feature one at a time — throat for "
         "voicing, airflow for manner, mouth position for place.",
     ],
+    "feature_to_symbol_q11": [
+        # Q11-specific ladder: given a formal description, find the IPA
+        # symbol. Highest-stakes question on HW1 (10 of 40 points).
+        # Level 1: decompose the description
+        "Take the description apart. If they say 'voiceless "
+        "post-alveolar fricative,' that's three pieces of information. "
+        "What is each piece telling you?",
+        # Level 2: filter by one feature at a time
+        "Use the description to narrow the field. Start with manner — "
+        "the manner alone usually narrows you to a small set (only "
+        "two or three English consonants share most manners). Then "
+        "use place to narrow further. Then voicing picks one.",
+        # Level 3: identify the candidate set
+        "Suppose the description is 'voiced bilabial stop.' Bilabial "
+        "stops in English are [p] and [b]. One is voiceless, one is "
+        "voiced. Which one matches?",
+        # Level 4: when manner is ambiguous
+        "If you can't remember the manner term, anchor it: 'fricative' "
+        "= friction sound (s/z/f/v/θ/ð/ʃ/ʒ/h), 'stop' = complete "
+        "closure (p/b/t/d/k/g/ʔ), 'nasal' = air through nose (m/n/ŋ), "
+        "'affricate' = stop+fricative (tʃ/dʒ), 'approximant' = open "
+        "passage (ɹ/j/w), 'lateral' = around the sides (l).",
+    ],
+    "symbol_to_description": [
+        # Inverse direction: given a symbol, produce the formal
+        # description. Used in matching questions and definition
+        # questions (e.g., HW1 Q4: "What is the manner of [θ]?").
+        # Level 1: name the three features
+        "When you describe a consonant formally, you name three "
+        "things. What are they? (Hint: one is about the vocal folds.)",
+        # Level 2: one feature at a time
+        "Take it feature by feature. Start with voicing — say the "
+        "sound with a hand on your throat. Vibrating or not?",
+        # Level 3: place
+        "Now place. Say the sound slowly and notice where the "
+        "constriction is. Lips? Tongue tip and upper teeth? Tongue "
+        "tip and the ridge behind your teeth? Tongue body and the "
+        "roof? Back of the tongue and the velum?",
+        # Level 4: manner
+        "Now manner. What is the airflow doing at that constriction? "
+        "Completely blocked (stop)? Squeezed through a narrow channel "
+        "with friction (fricative)? Going through the nose (nasal)? "
+        "Flowing freely past the articulators (approximant)?",
+        # Level 5: omitted features convention
+        "Last thing: predictable features get left out. Nasals are "
+        "always voiced in English, so for [m] you'd say 'bilabial "
+        "nasal' — not 'voiced bilabial nasal stop.' Are any of your "
+        "features predictable from the others?",
+    ],
+    "chart_navigation": [
+        # For when the student can't find a symbol on the IPA chart or
+        # doesn't know how to use the chart as a lookup tool.
+        # Level 1: orient
+        "The IPA chart isn't a list — it's a 2D grid. What do you "
+        "think the rows and columns mean?",
+        # Level 2: name the axes
+        "Columns = place of articulation, organized front-of-mouth on "
+        "the left to back-of-mouth on the right. Rows = manner of "
+        "articulation. Where on the grid would you start looking for "
+        "the sound you want?",
+        # Level 3: navigate to the right cell
+        "Suppose you're looking for [s]. [s] is alveolar (place) and "
+        "fricative (manner). Find the alveolar column, the fricative "
+        "row. The cell where they meet has [s] and [z].",
+        # Level 4: read voicing pairs
+        "When two symbols share a cell, they differ only in voicing. "
+        "By convention, voiceless is on the left, voiced is on the "
+        "right. So if you're looking for the voiceless one, take the "
+        "left symbol; voiced, take the right.",
+    ],
 }
 
 
@@ -220,7 +290,24 @@ if __name__ == "__main__":
 
     # list_hint_types
     types = list_hint_types()
-    assert len(types) == 4
+    assert len(types) == 7
     assert all("hint_type" in t and "total_levels" in t for t in types)
 
+    # New Day-3 ladders are present
+    type_names = {t["hint_type"] for t in types}
+    assert {"feature_to_symbol_q11", "symbol_to_description",
+            "chart_navigation"}.issubset(type_names)
+
+    # Spot-check a Q11 hint at level 1
+    r = run({"hint_type": "feature_to_symbol_q11", "current_level": 0})
+    assert r["error"] is None
+    assert r["next_level"] == 1
+    assert "description" in r["hint_text"].lower() or \
+           "feature" in r["hint_text"].lower()
+
+    # symbol_to_description has 5 levels (omitted-features step)
+    r = run({"hint_type": "symbol_to_description", "current_level": 0})
+    assert r["total_levels"] == 5
+
     print("escalate-hint-level-gradually/logic.py: all checks passed ✓")
+
