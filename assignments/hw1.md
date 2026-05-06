@@ -64,8 +64,18 @@ Students should be able to:
   lateral, tap [NEW, Day 2-3]
 - Obstruent vs. sonorant as derived categories [NEW, Day 3]
 - IPA symbols for the 26 English consonants [NEW, Day 3]
+- Formal consonant description format: voicing + POA + manner, with
+  predictable features omitted (e.g., [m] = "bilabial nasal") [NEW,
+  Day 3 slide 18 — directly tested by Q11]
+- IPA chart structure: columns are place, rows are manner, paired
+  symbols in a cell differ in voicing (voiceless on the left) [NEW,
+  Day 3 slides 19-20]
 - One-sound-one-symbol principle of the IPA [Day 1]
 - Orthography ≠ pronunciation [Day 1]
+- Tap [ɾ] environment: appears between vowels with V1 stressed
+  (butter, water, ladder) [NEW, Day 3 slide 30]
+- IPA [r] is a trill, NOT the English r — English uses [ɹ] [Day 3
+  slide 28]
 
 ## Question Types
 - **Multiple choice (single answer)** — concept questions
@@ -108,6 +118,20 @@ especially relevant to HW1:
   straight line.
 - **[ŋ] is two sounds** — relevant to Q11 (velar nasal → [ŋ]) and any
   transcription of word-final *ng*.
+- **English r is the IPA [r]** [NEW, Day 3] — relevant to any
+  transcription with the English r sound. Students who write [r]
+  instead of [ɹ] are using the trill notation; flag and redirect to [ɹ].
+- **Doubled consonant letters spell doubled sounds** [NEW, Day 3] —
+  relevant to Q26 (*wouldn't*) and to any transcription with medial
+  *tt*, *dd* between vowels (*butter*, *water*, *ladder*). The student
+  needs the tap [ɾ], not [t]/[d].
+- **The IPA chart is just a list** [NEW, Day 3] — relevant to Q11
+  (matching), where students who try to memorize symbols flat will
+  struggle compared to students who navigate by feature.
+- **Formal descriptions name all three features** [NEW, Day 3] —
+  relevant to Q11 if the description in the prompt has a feature
+  omitted (e.g., "bilabial nasal" without "voiced") and the student
+  doesn't recognize it as a complete description.
 
 Assignment-specific patterns to watch for:
 
@@ -217,12 +241,14 @@ A student on the right track but not yet there typically:
   terminology (the "voiceless post-alveolar fricative" vocabulary)
   will lose a lot of ground here even if they understand the sounds.
   Worth targeted pre-work.
+
 - Several transcription questions (Q23 *raised*, Q26 *wouldn't*,
   Q28 *crashed*, Q30 *reached*) involve past-tense -ed or plural -s
   endings that surface voicing alternations students won't learn
   formally until Ch. 10/11. For HW1, the tutor should NOT explain the
   alternation — just guide the student to listen to what they actually
   say. The alternation pattern comes later.
+  
 - Q26 (*wouldn't* → [wʊdnʔ]) is the only word on the assignment with a
   glottal stop. Students who miss it usually write [t]. This is a good
   Socratic moment: ask them to say *wouldn't* naturally, then ask what
