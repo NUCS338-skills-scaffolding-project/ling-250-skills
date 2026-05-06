@@ -226,6 +226,102 @@ PROBES = {
         ),
         "related_concepts": ["IPA", "one-sound-one-symbol", "transcription"],
     },
+    "formal_consonant_description": {
+        "probe": (
+            "When a phonetician describes a consonant formally, what "
+            "three features do they typically name, and in what order?"
+        ),
+        "key_concepts": [
+            {
+                "name": "the three features",
+                "synonyms": ["voicing", "place", "manner",
+                             "place of articulation",
+                             "manner of articulation"],
+                "description": (
+                    "The student names voicing, place of articulation, "
+                    "and manner of articulation as the three features."
+                ),
+            },
+            {
+                "name": "conventional order",
+                "synonyms": ["voicing first", "voicing place manner",
+                             "in that order", "voicing then place"],
+                "description": (
+                    "The student conveys the conventional order: "
+                    "voicing → place → manner. (Order can be flexible "
+                    "in casual description but voicing-first is the "
+                    "textbook convention.)"
+                ),
+            },
+            {
+                "name": "predictable features can be omitted",
+                "synonyms": ["omit", "implicit", "predictable",
+                             "redundant", "leave out", "skip"],
+                "description": (
+                    "The student knows that predictable features are "
+                    "conventionally left out — e.g., nasals are "
+                    "predictably voiced, so [m] is described as "
+                    "'bilabial nasal' rather than 'voiced bilabial "
+                    "nasal stop'. (Bonus credit if the student gives "
+                    "an example.)"
+                ),
+            },
+        ],
+        "example_strong": (
+            "Three features, in order: voicing, place, manner. So [f] "
+            "is a voiceless labiodental fricative. Predictable "
+            "features are conventionally omitted — [m] is just a "
+            "'bilabial nasal' because nasals are always voiced."
+        ),
+        "related_concepts": ["voicing", "place", "manner", "convention",
+                             "Q11"],
+    },
+    "ipa_chart_navigation": {
+        "probe": (
+            "How is the IPA consonant chart organized? What does each "
+            "row, column, and pair within a cell tell you?"
+        ),
+        "key_concepts": [
+            {
+                "name": "columns are place",
+                "synonyms": ["columns", "column", "left to right",
+                             "across", "horizontal"],
+                "description": (
+                    "The student identifies that columns map to place "
+                    "of articulation, typically running front-of-mouth "
+                    "(left) to back-of-mouth (right)."
+                ),
+            },
+            {
+                "name": "rows are manner",
+                "synonyms": ["rows", "row", "top to bottom", "down",
+                             "vertical"],
+                "description": (
+                    "The student identifies that rows map to manner of "
+                    "articulation."
+                ),
+            },
+            {
+                "name": "voicing pairs within a cell",
+                "synonyms": ["voicing", "voiceless", "voiced", "pair",
+                             "left and right", "side by side"],
+                "description": (
+                    "The student identifies that when two symbols "
+                    "share a cell, they differ only in voicing — "
+                    "voiceless on the left, voiced on the right."
+                ),
+            },
+        ],
+        "example_strong": (
+            "Columns are place (front to back of the mouth), rows are "
+            "manner. Two symbols sharing a cell differ only in "
+            "voicing — voiceless on the left, voiced on the right. "
+            "So in the dental column, fricative row, you find [θ] "
+            "(voiceless) and [ð] (voiced)."
+        ),
+        "related_concepts": ["IPA", "chart", "place", "manner",
+                             "voicing"],
+    },
 }
 
 
@@ -300,10 +396,12 @@ if __name__ == "__main__":
     assert "vocal cords" in vocal_concept["synonyms"]
     assert "voicebox" in vocal_concept["synonyms"]
 
-    # Each of the 5 probes works
+    # Each of the 7 probes works
     for concept_id in ["voicing", "place_of_articulation",
                        "manner_of_articulation",
-                       "orthography_vs_pronunciation", "ipa_principle"]:
+                       "orthography_vs_pronunciation", "ipa_principle",
+                       "formal_consonant_description",
+                       "ipa_chart_navigation"]:
         r = run({"action": "probe", "concept": concept_id})
         assert r["error"] is None
         assert len(r["key_concepts"]) >= 2
@@ -327,9 +425,14 @@ if __name__ == "__main__":
     r = run({"action": "probe"})
     assert r["error"] is not None
 
-    # list_concepts returns all 5
+    # list_concepts returns all 7
     all_probes = list_concepts()
-    assert len(all_probes) == 5
+    assert len(all_probes) == 7
     assert all("concept" in p and "probe" in p for p in all_probes)
+
+    # New Day-3 probes are present and have the right shape
+    new_concepts = {"formal_consonant_description", "ipa_chart_navigation"}
+    existing_concepts = {p["concept"] for p in all_probes}
+    assert new_concepts.issubset(existing_concepts)
 
     print("validate-pre-knowledge/logic.py: all checks passed ✓")
