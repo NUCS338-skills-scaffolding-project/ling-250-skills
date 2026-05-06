@@ -26,7 +26,9 @@ python_entry: "logic.py"
 When a student is stuck on a question, produces the next-most-specific
 hint without revealing the answer. Supports pre-built hint ladders for
 common HW1 question types (feature classification, midsagittal diagram
-identification, IPA transcription, multi-select feature matching) and
+identification, IPA transcription, multi-select feature matching,
+feature-description-to-IPA-symbol matching for Q11, symbol-to-formal-
+description for definition questions, and IPA-chart navigation) and
 accepts custom ladders from the orchestrator for other question shapes.
 Stateless — the orchestrator tracks which level has already been given.
 
