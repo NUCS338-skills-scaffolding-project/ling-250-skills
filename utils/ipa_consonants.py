@@ -272,6 +272,142 @@ MANNERS = {
     },
 }
 
+# Spelling-to-IPA trap inventory. Used by repair-misconceptions and by
+# the orthography_vs_pronunciation refresher when the orchestrator
+# wants concrete examples of how English spelling misleads transcription.
+# Each entry pairs a spelling pattern with the sounds it can represent
+# in English, plus example words and the gist of the trap.
+# Source: Day 3 slides 21-31 plus standard examples from Days 1-3.
+SPELLING_TRAPS = {
+    "th": {
+        "represents": ["θ", "ð"],
+        "examples": [("thing", "θ"), ("this", "ð"), ("path", "θ"),
+                     ("smooth", "ð")],
+        "trap": (
+            "Two different sounds spelled identically. Voiceless [θ] and "
+            "voiced [ð] differ only in voicing. Most words use one or "
+            "the other; the spelling never tells you which."
+        ),
+    },
+    "ph": {
+        "represents": ["f"],
+        "examples": [("phone", "f"), ("graph", "f"), ("photograph", "f")],
+        "trap": "One sound: [f]. Not [p] + [h], even though it looks that way.",
+    },
+    "ch": {
+        "represents": ["tʃ", "k", "ʃ"],
+        "examples": [("chip", "tʃ"), ("character", "k"), ("chic", "ʃ"),
+                     ("ache", "k")],
+        "trap": (
+            "Three different sounds depending on the word. Default [tʃ] "
+            "(chip), but [k] in Greek-derived words (character, ache) "
+            "and [ʃ] in French-derived words (chic, machine)."
+        ),
+    },
+    "sh": {
+        "represents": ["ʃ"],
+        "examples": [("ship", "ʃ"), ("crash", "ʃ"), ("fashion", "ʃ")],
+        "trap": "Two letters, one sound: [ʃ]. Reliable.",
+    },
+    "ng": {
+        "represents": ["ŋ", "ŋg", "ndʒ"],
+        "examples": [("sing", "ŋ"), ("finger", "ŋg"), ("change", "ndʒ"),
+                     ("ringer", "ŋ")],
+        "trap": (
+            "Often one sound [ŋ], but in 'finger' both [ŋ] and [g]; in "
+            "'change' it's something else entirely. The pattern is "
+            "morphological: 'sing-er' = [ŋ], 'fing-er' = [ŋg]."
+        ),
+    },
+    "tt": {
+        "represents": ["t", "ɾ"],
+        "examples": [("attic", "t"), ("butter", "ɾ"), ("matters", "ɾ"),
+                     ("attest", "t")],
+        "trap": (
+            "[t] in many positions, but [ɾ] (tap) when between a "
+            "stressed and unstressed vowel — butter, water, ladder. The "
+            "spelling 'tt' doesn't change; the environment does."
+        ),
+    },
+    "c": {
+        "represents": ["k", "s", "ʃ"],
+        "examples": [("cat", "k"), ("cell", "s"), ("ocean", "ʃ"),
+                     ("cup", "k"), ("cycle", "s")],
+        "trap": (
+            "Hard [k] before a/o/u, soft [s] before e/i/y, and "
+            "occasionally [ʃ] in -cean / -cious. One letter, three "
+            "sounds — students who transcribe by spelling lose this."
+        ),
+    },
+    "s": {
+        "represents": ["s", "z", "ʃ", "ʒ"],
+        "examples": [("sip", "s"), ("dogs", "z"), ("sure", "ʃ"),
+                     ("measure", "ʒ"), ("rose", "z")],
+        "trap": (
+            "Most often [s] or [z] depending on voicing context, but "
+            "also [ʃ] (sure, sugar) and [ʒ] (measure, vision, leisure). "
+            "Plural -s is [z] after voiced sounds, [s] after voiceless."
+        ),
+    },
+    "ti": {
+        "represents": ["ʃ", "ti", "tʃ"],
+        "examples": [("nation", "ʃ"), ("tiger", "ti"), ("question", "tʃ")],
+        "trap": (
+            "[ʃ] in -tion / -tia, plain [ti] in most other positions, "
+            "and [tʃ] in -stion."
+        ),
+    },
+    "wh": {
+        "represents": ["w", "h"],
+        "examples": [("what", "w"), ("who", "h"), ("whose", "h"),
+                     ("when", "w")],
+        "trap": (
+            "Usually [w] (the h is silent), but in a small set "
+            "(who, whose, whole, whore) the w is silent and it's [h]."
+        ),
+    },
+    "gh": {
+        "represents": ["", "f", "g"],
+        "examples": [("through", "(silent)"), ("rough", "f"),
+                     ("ghost", "g"), ("though", "(silent)"),
+                     ("laugh", "f")],
+        "trap": (
+            "Usually silent (through, though, neighbor), sometimes [f] "
+            "(rough, laugh, cough), sometimes [g] in initial position "
+            "(ghost). Among English's worst spelling-sound mismatches."
+        ),
+    },
+    "silent_letters": {
+        "represents": [""],
+        "examples": [("knee", "n"), ("knight", "naɪt"), ("psalm", "sɑm"),
+                     ("comb", "kom"), ("lamb", "læm"), ("write", "ɹ"),
+                     ("whole", "h"), ("hour", "aʊɹ")],
+        "trap": (
+            "Initial k before n, p before s/n, w before r, and silent "
+            "h in some words. Final b after m. The IPA reflects what "
+            "you say, not what's written."
+        ),
+    },
+    "j_as_y": {
+        "represents": ["j"],
+        "examples": [("yes", "j"), ("yellow", "j"), ("you", "j")],
+        "trap": (
+            "The IPA symbol [j] is the y-glide sound at the start of "
+            "'yes' — NOT the [dʒ] sound at the start of 'jug'. Looks "
+            "like English 'j' but isn't."
+        ),
+    },
+    "english_r": {
+        "represents": ["ɹ"],
+        "examples": [("red", "ɹ"), ("right", "ɹ"), ("very", "ɹ")],
+        "trap": (
+            "English 'r' is [ɹ] (rhotic approximant), NOT IPA [r] "
+            "(which is the trill in Spanish, Italian, Scottish). Use "
+            "[ɹ] when transcribing English."
+        ),
+    },
+}
+
 def get_features(symbol):
     """Return the full feature dict for a symbol, including derived fields, or None."""
     base = CONSONANTS.get(symbol)
