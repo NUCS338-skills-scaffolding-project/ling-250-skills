@@ -187,7 +187,6 @@ NON_ENGLISH_REFERENCE = {
                "any tongue contact. When transcribing English, use [ɹ]."
            )},
 }
-
 # Place-of-articulation descriptions.
 PLACES = {
     "bilabial": {
@@ -264,6 +263,12 @@ MANNERS = {
         "description": "brief single contact between tongue blade and alveolar ridge (also called flap)",
         "examples": ["ɾ"],
         "category": "sonorant",
+    },
+    "trill": {
+        "description": "rapid repeated taps of an articulator (NOT used in English; see Spanish 'rico', Scottish 'red')",
+        "examples": [],  # No English consonants are trills; [r] lives in NON_ENGLISH_REFERENCE
+        "category": "sonorant",
+        "english": False,
     },
 }
 
