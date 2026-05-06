@@ -77,7 +77,9 @@ skill's catalog as its reference.
 ### Step 1 — Identify the concept to probe
 Orchestrator decides based on `assignment.md`'s Concepts Required. For
 HW1 the likely probes are: voicing, place_of_articulation,
-manner_of_articulation, ipa_principle, and orthography_vs_pronunciation.
+manner_of_articulation, ipa_principle, orthography_vs_pronunciation,
+formal_consonant_description (the voicing+POA+manner format taught on
+Day 3), and ipa_chart_navigation (how to read the IPA chart structure).
 
 ### Step 2 — Pose the probe
 Call `run({"action": "probe", "concept": <concept_id>})` to retrieve
