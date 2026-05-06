@@ -499,10 +499,40 @@ if __name__ == "__main__":
     # Descriptions
     assert describe_place("bilabial") == "upper and lower lip"
     assert describe_manner("stop").startswith("complete closure")
+    assert describe_manner("trill").startswith("rapid repeated")
 
     # Cross-check: every consonant's place and manner exist in PLACES and MANNERS
     for sym, feats in CONSONANTS.items():
         assert feats["place"] in PLACES, f"Missing place entry: {feats['place']}"
         assert feats["manner"] in MANNERS, f"Missing manner entry: {feats['manner']}"
+
+    # Day-3 additions: tap environment, non-English [r], spelling traps,
+    # formal description format
+    assert "stressed" in CONSONANTS["ɾ"]["environment"].lower()
+    assert NON_ENGLISH_REFERENCE["r"]["manner"] == "trill"
+    assert NON_ENGLISH_REFERENCE["r"]["english_counterpart"] == "ɹ"
+    assert "r" not in CONSONANTS  # English doesn't have the trill
+
+    # Spelling traps
+    assert "th" in SPELLING_TRAPS
+    assert "θ" in SPELLING_TRAPS["th"]["represents"]
+    assert "ð" in SPELLING_TRAPS["th"]["represents"]
+    assert lookup_spelling_trap("ph")["represents"] == ["f"]
+    assert lookup_spelling_trap("not_a_trap") is None
+
+    traps_for_f = find_traps_for_sound("f")
+    assert any(t["pattern"] == "ph" for t in traps_for_f)
+    assert any(t["pattern"] == "gh" for t in traps_for_f)
+
+    # Formal consonant description (Day 3 slide 18)
+    # With omit_predictable=True, predictably-voiced manners drop voicing
+    assert describe_consonant_formally("f") == "voiceless labiodental fricative"
+    assert describe_consonant_formally("m") == "bilabial nasal"  # voicing predictable
+    assert describe_consonant_formally("l") == "alveolar lateral"
+    assert describe_consonant_formally("ɾ") == "alveolar tap"
+
+    # With omit_predictable=False, voicing is always stated
+    assert describe_consonant_formally("m", omit_predictable=False) \
+        == "voiced bilabial nasal"
 
     print("ipa_consonants.py: all checks passed ✓")
