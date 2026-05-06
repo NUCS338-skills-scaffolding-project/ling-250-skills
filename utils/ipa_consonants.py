@@ -445,6 +445,40 @@ def describe_manner(manner):
     entry = MANNERS.get(manner)
     return entry["description"] if entry else None
 
+def lookup_spelling_trap(pattern):
+    """Return the SPELLING_TRAPS entry for a spelling pattern, or None."""
+    return SPELLING_TRAPS.get(pattern)
+
+def find_traps_for_sound(ipa_symbol):
+    """Return all SPELLING_TRAPS entries whose 'represents' list contains the IPA symbol."""
+    return [{"pattern": pat, **entry}
+            for pat, entry in SPELLING_TRAPS.items()
+            if ipa_symbol in entry["represents"]]
+
+def describe_consonant_formally(symbol, omit_predictable=True):
+    """
+    Produce the formal voicing+POA+manner description of a consonant.
+    If omit_predictable is True, voicing is omitted for nasals (since
+    all English nasals are voiced) and approximants/laterals/taps
+    (since these are predictably voiced). Per Day 3 slide 18.
+
+    Examples (omit_predictable=True):
+      [f] -> "voiceless labiodental fricative"
+      [m] -> "bilabial nasal" (voicing implicit; "stop" implicit)
+      [l] -> "alveolar lateral approximant"
+    """
+    feats = get_features(symbol)
+    if not feats:
+        return None
+    parts = []
+    predictably_voiced = feats["manner"] in {"nasal", "approximant",
+                                             "lateral", "tap"}
+    if not omit_predictable or not predictably_voiced:
+        parts.append(feats["voicing"])
+    parts.append(feats["place"])
+    parts.append(feats["manner"])
+    return " ".join(parts)
+
 if __name__ == "__main__":
     # Basic feature lookups
     assert get_features("p")["voicing"] == "voiceless"
