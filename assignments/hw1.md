@@ -1,13 +1,3 @@
----
-assignment_id: "ling250-hw1"
-assignment_name: "HW1: Consonant Articulation & IPA"
-course: "Ling 250 — Sound Patterns in Human Language"
-unit: "Days 2-3"
-due_date: "Tuesday of Week 3 (see syllabus)"
-total_points: 40
-canvas_quiz: true
----
-
 # HW1: Consonant Articulation & IPA
 
 ## Assignment Name
