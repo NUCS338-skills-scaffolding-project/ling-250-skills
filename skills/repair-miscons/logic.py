@@ -285,9 +285,20 @@ if __name__ == "__main__":
     result = run({})
     assert "error" in result
 
-    # list_misconceptions returns all 8
+    # list_misconceptions returns all 12
     all_mc = list_misconceptions()
-    assert len(all_mc) == 8
+    assert len(all_mc) == 12
     assert all("misconception_id" in m and "title" in m for m in all_mc)
+
+    # Spot-check the new entries
+    new_ids = {"english_r_is_trill", "doubled_letters_doubled_sounds",
+               "ipa_chart_is_a_list", "formal_description_names_all_features"}
+    existing_ids = {m["misconception_id"] for m in all_mc}
+    assert new_ids.issubset(existing_ids)
+
+    # English-r misconception is findable by topic search
+    rhotic_results = run({"topic": "rhotic"})
+    assert any(r["misconception_id"] == "english_r_is_trill"
+               for r in rhotic_results)
 
     print("repair-misconceptions/logic.py: all checks passed ✓")
