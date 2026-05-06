@@ -305,6 +305,174 @@ DIAGNOSTICS = {
             ),
         },
     ],
+    "formal_consonant_description": [
+        {
+            "id": "knows_three_features",
+            "name": "Knows the three feature dimensions",
+            "probe_question": (
+                "If I gave you any consonant and asked you to describe "
+                "it formally, what kinds of information would you need "
+                "to provide?"
+            ),
+            "what_to_listen_for": (
+                "Student names voicing, place (of articulation), and "
+                "manner (of articulation) — or comes close enough that "
+                "the framework is clearly there ('how the throat is "
+                "doing,' 'where in the mouth,' 'what the air is doing')."
+            ),
+            "remediation_hint": (
+                "Teach the framework explicitly: voicing, place, "
+                "manner. These are the three features that fully "
+                "specify any consonant. Anchor each in the body — "
+                "throat for voicing, mouth position for place, airflow "
+                "for manner."
+            ),
+        },
+        {
+            "id": "describe_simple_consonant",
+            "name": "Can produce a formal description for a simple consonant",
+            "probe_question": (
+                "Give me the formal description of [s]. I'm looking "
+                "for voicing, place, and manner."
+            ),
+            "what_to_listen_for": (
+                "Student produces 'voiceless alveolar fricative' (or "
+                "any equivalent ordering / phrasing). Bonus: they say "
+                "the features in voicing-place-manner order."
+            ),
+            "remediation_hint": (
+                "Walk through [s] step by step with the student. "
+                "Voicing — hand on throat, no buzz, voiceless. Place "
+                "— tongue tip near alveolar ridge. Manner — narrow "
+                "channel with friction, fricative. Practice this on "
+                "[t], [f], [ʃ] until the format is automatic."
+            ),
+        },
+        {
+            "id": "describe_predictable_features",
+            "name": "Knows when to omit predictable features",
+            "probe_question": (
+                "Describe [m] formally. Then: do you say 'voiced "
+                "bilabial nasal stop,' or just 'bilabial nasal'? Why?"
+            ),
+            "what_to_listen_for": (
+                "Student knows that nasals are predictably voiced "
+                "(and predictably stops in the broader sense), so "
+                "those features are conventionally omitted. They give "
+                "'bilabial nasal' or explain that voicing is "
+                "redundant."
+            ),
+            "remediation_hint": (
+                "Teach the omission convention by counterexample. Is "
+                "there a voiceless [m] in English? No. So saying "
+                "'voiced' adds no information — the student already "
+                "knew it from 'nasal'. Predictable features get "
+                "dropped. This is what slide 18 means."
+            ),
+        },
+        {
+            "id": "feature_to_symbol_lookup",
+            "name": "Can go from formal description back to symbol",
+            "probe_question": (
+                "If I describe a sound as a 'voiced post-alveolar "
+                "affricate,' what IPA symbol matches?"
+            ),
+            "what_to_listen_for": (
+                "Student produces [dʒ]. The path is: voiced + "
+                "post-alveolar + affricate → unique consonant in "
+                "English."
+            ),
+            "remediation_hint": (
+                "This is the Q11 inverse direction. Teach it as "
+                "filtering: post-alveolar narrows to {ʃ, ʒ, tʃ, dʒ}; "
+                "affricate narrows to {tʃ, dʒ}; voiced picks [dʒ]. "
+                "Practice with several descriptions until the lookup "
+                "is fluent."
+            ),
+        },
+    ],
+    "ipa_chart_navigation": [
+        {
+            "id": "chart_is_organized",
+            "name": "Recognizes the chart is organized, not a list",
+            "probe_question": (
+                "When you look at the IPA consonant chart, do you see "
+                "a flat list of symbols you have to memorize, or do "
+                "you see structure? What's the structure?"
+            ),
+            "what_to_listen_for": (
+                "Student says structured/organized and identifies at "
+                "least one axis (rows or columns). 'Flat list' or 'I "
+                "just memorize them' is the gap."
+            ),
+            "remediation_hint": (
+                "Show the student the chart with one row and one "
+                "column highlighted. The chart is a 2-D lookup table, "
+                "not a memorization list. Once they see the axes, the "
+                "rest unlocks."
+            ),
+        },
+        {
+            "id": "columns_are_place",
+            "name": "Knows columns are place of articulation",
+            "probe_question": (
+                "What changes as you move across the columns of the "
+                "IPA consonant chart, left to right?"
+            ),
+            "what_to_listen_for": (
+                "Student identifies that columns are place of "
+                "articulation, typically front (left) to back (right) "
+                "of the mouth."
+            ),
+            "remediation_hint": (
+                "Walk through the columns with body anchoring: "
+                "leftmost column is bilabial (lips together — front of "
+                "the mouth), then labiodental, dental, alveolar, "
+                "post-alveolar, palatal, velar, glottal. Match the "
+                "left-to-right with front-to-back of the vocal tract."
+            ),
+        },
+        {
+            "id": "rows_are_manner",
+            "name": "Knows rows are manner of articulation",
+            "probe_question": (
+                "What changes as you move down the rows of the chart, "
+                "top to bottom?"
+            ),
+            "what_to_listen_for": (
+                "Student identifies that rows are manner of "
+                "articulation. They may not know the exact ordering "
+                "convention; that's fine."
+            ),
+            "remediation_hint": (
+                "Point out the manner labels: stop, fricative, "
+                "affricate, nasal, approximant, etc. Each row is one "
+                "manner of articulation. Match the row label with the "
+                "kind of constriction the manner produces."
+            ),
+        },
+        {
+            "id": "voicing_pairs_in_cells",
+            "name": "Reads voicing pairs within a cell",
+            "probe_question": (
+                "Sometimes you'll see two symbols in the same cell of "
+                "the IPA chart — like [s] and [z] together. What does "
+                "that mean?"
+            ),
+            "what_to_listen_for": (
+                "Student identifies that paired symbols in a cell "
+                "share place and manner but differ in voicing — "
+                "voiceless on the left, voiced on the right."
+            ),
+            "remediation_hint": (
+                "Demonstrate with [t]/[d], [s]/[z], [θ]/[ð]: same "
+                "place, same manner, different voicing. The chart "
+                "convention is voiceless-left, voiced-right. Once "
+                "they see this, they have a structural lookup tool "
+                "for any English consonant."
+            ),
+        },
+    ],
 }
 
 
@@ -517,9 +685,22 @@ if __name__ == "__main__":
     r = run({"action": "get_probes"})
     assert r["error"] is not None
 
-    # --- list_concepts returns all 5 ---
+    # --- list_concepts returns all 7 ---
     all_c = list_concepts()
-    assert len(all_c) == 5
+    assert len(all_c) == 7
     assert all("concept" in c and "sub_probe_count" in c for c in all_c)
+
+    # New Day-3 concepts have 4 sub-probes each
+    by_id = {c["concept"]: c["sub_probe_count"] for c in all_c}
+    assert by_id["formal_consonant_description"] == 4
+    assert by_id["ipa_chart_navigation"] == 4
+
+    # Spot-check a new diagnostic flow: stuck on "describe [s] formally"
+    r = run({"action": "get_probes",
+             "concept": "formal_consonant_description"})
+    assert r["error"] is None
+    sub_ids = [p["id"] for p in r["sub_probes"]]
+    assert sub_ids[0] == "knows_three_features"
+    assert "feature_to_symbol_lookup" in sub_ids
 
     print("diagnose-prerequisite-gaps/logic.py: all checks passed ✓")
