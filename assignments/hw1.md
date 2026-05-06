@@ -1,9 +1,8 @@
+A Canvas quiz worth 40 points covering English consonant articulation and the IPA. Students work through concept questions, feature-based identification, midsagittal-diagram-to-symbol matching, and IPA-to-English transcription. Covers Days 1-3.
+
 # HW1: Consonant Articulation & IPA
 
-## Assignment Name
-HW1: Consonant Articulation & IPA
-
-## Assignment Description
+## Detailed Assignment Description
 A Canvas quiz worth 40 points covering English consonant articulation and
 the IPA. Students work through a mix of concept questions, multi-select
 feature-based identification, midsagittal-diagram-to-symbol matching,
@@ -14,9 +13,9 @@ as reference. The assignment is due before class on the first Tuesday of
 the consonant unit per the syllabus.
 
 ## Unit / Days Covered
-Days 2-3 of the course; Zsiga Ch. 2.
+Days 1-3 of the course; Zsiga Ch. 2.
 
-Day 1 anatomy and the IPA overview (from Day 1-2) are also prerequisite
+Day 1 anatomy and the IPA overview (from Day 1-3) are also prerequisite
 and may be probed by `validate_pre_knowledge`.
 
 ## Learning Goals
