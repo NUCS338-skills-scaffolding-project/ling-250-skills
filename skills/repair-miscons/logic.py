@@ -127,6 +127,89 @@ MISCONCEPTIONS = {
         ),
         "related_concepts": ["affricate", "cluster", "timing"],
     },
+    "english_r_is_trill": {
+        "title": "English 'r' is the IPA [r]",
+        "claim": "The IPA symbol [r] is the English r sound in red, run, very.",
+        "why_wrong": (
+            "[r] in IPA is a trill — a series of rapid taps from the "
+            "tongue tip against the alveolar ridge. English does NOT "
+            "use the trill. The English r is the rhotic approximant "
+            "[ɹ], a single approximation without contact. Spanish "
+            "(rico), Italian (rosso), and Scottish (bright red) use [r]."
+        ),
+        "correction_target": (
+            "Ask the student to say red in English, then try saying "
+            "rico the way a native Spanish speaker would. What is the "
+            "tongue doing differently?"
+        ),
+        "related_concepts": ["rhotic", "approximant", "trill",
+                             "orthography", "transcription"],
+    },
+    "doubled_letters_doubled_sounds": {
+        "title": "Doubled consonant letters are pronounced as the doubled letter",
+        "claim": "The 'tt' in butter is pronounced [t] because that's the letter.",
+        "why_wrong": (
+            "In American English, butter is [bʌɾəɹ] with a tap [ɾ], "
+            "not [t]. The tap appears between vowels when V1 is "
+            "stressed and V2 is unstressed: butter, water, ladder, "
+            "city, better. The spelling doesn't change — the "
+            "environment does. Outside that environment (e.g., "
+            "stressed V2 in attest) [t] surfaces."
+        ),
+        "correction_target": (
+            "Ask the student to say butter and attest slowly, paying "
+            "attention to what the tongue does at the middle "
+            "consonant. Are they the same?"
+        ),
+        "related_concepts": ["tap", "flap", "alveolar", "environment",
+                             "orthography"],
+    },
+    "ipa_chart_is_a_list": {
+        "title": "The IPA chart is just a list",
+        "claim": (
+            "The IPA chart is a flat list of symbols you have to "
+            "memorize one by one."
+        ),
+        "why_wrong": (
+            "The chart is organized. Columns are place of "
+            "articulation (front of mouth on the left, back on the "
+            "right). Rows are manner. When two symbols share a cell, "
+            "they differ only in voicing — voiceless on the left, "
+            "voiced on the right. Knowing the structure lets you look "
+            "up any consonant by its three features."
+        ),
+        "correction_target": (
+            "Ask the student to find the cell for 'alveolar fricative' "
+            "on the chart. What two symbols are there? What's the only "
+            "difference between them?"
+        ),
+        "related_concepts": ["IPA", "chart", "place", "manner",
+                             "voicing", "structure"],
+    },
+    "formal_description_names_all_features": {
+        "title": (
+            "The formal description of a consonant always names all "
+            "three features"
+        ),
+        "claim": (
+            "To describe a consonant formally, you always have to say "
+            "voicing AND place AND manner — e.g., 'voiced bilabial "
+            "nasal stop'."
+        ),
+        "why_wrong": (
+            "Predictable features are conventionally omitted. Since "
+            "all English nasals are voiced and have complete oral "
+            "closure, [m] is 'bilabial nasal' — not 'voiced bilabial "
+            "nasal stop'. Mention only the features that distinguish "
+            "the sound from others sharing the same context."
+        ),
+        "correction_target": (
+            "Ask: what does saying 'voiced' add to the description of "
+            "[m]? Is there a voiceless [m] in English?"
+        ),
+        "related_concepts": ["formal description", "voicing", "place",
+                             "manner", "convention"],
+    },
 }
 
 
