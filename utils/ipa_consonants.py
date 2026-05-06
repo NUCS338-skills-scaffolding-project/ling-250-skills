@@ -75,10 +75,16 @@ CONSONANTS = {
            "example_word": "nap",
            "spellings": ["n", "nn", "kn", "gn"]},
     "ɾ":  {"place": "alveolar",
-           "manner": "tap",
-           "voicing": "voiced",
-           "example_word": "butter",
-           "spellings": ["t", "tt", "d"]},
+       "manner": "tap",
+       "voicing": "voiced",
+       "example_word": "butter",
+       "spellings": ["t", "tt", "d"],
+       "environment": (
+           "Restricted to between vowels where V1 is stressed and "
+           "V2 is unstressed — pattern: [V₁ ɾ V₂]. Examples: butter, "
+           "water, ladder, batter. Outside this environment the "
+           "underlying /t/ or /d/ surfaces as [t] or [d]."
+       )},
     "ɹ":  {"place": "alveolar",
            "manner": "approximant",
            "voicing": "voiced",
