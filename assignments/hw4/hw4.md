@@ -21,7 +21,7 @@ Day 13 covers morpho-phonological alternations and allomorph selection.
 
 Days 1-7 phonetic features (place, manner, voicing for consonants;
 height, backness, rounding, tense/lax for vowels) are prerequisite
-for natural class reasoning and may be probed by `validate_pre_knowledge`.
+for natural class reasoning and may be probed by `validate-prereqs`.
 
 This is the most content-heavy unit of the course and the assignment
 that synthesizes the most material. Spend time on it.
@@ -338,7 +338,7 @@ A student on the right track but not yet there typically:
 - **Do not propose the UR before the student has compared both
   candidate analyses.**
 - **Do not supply the natural-class label** before the student
-  has listed the shared features. (`id_natural_class` skill is
+  has listed the shared features. (`id-natural-class` skill is
   precisely about NOT doing this.)
 - **Do not write the rule for the student** — guide them through
   change, description, environment, and class.
@@ -358,38 +358,38 @@ A student on the right track but not yet there typically:
 HW4 is the highest-leverage assignment for the Round 2 skills.
 4 of 5 target this HW directly:
 
-- **`analyze_dist`** (Round 2) — workhorse. Every distributional
+- **`analyze-dist`** (Round 2) — workhorse. Every distributional
   analysis question lives here. Flow: collect environments →
   compare → classify (overlapping/complementary/identical) →
   propose UR.
-- **`probe_min_pair`** (Round 2) — for "are these phonemes?"
+- **`probe-min-pair`** (Round 2) — for "are these phonemes?"
   questions and for HW5 syllable-final contrasts. Help students
   find or construct minimal pairs from data; recognize when
   absence of minimal pairs is informative vs just small dataset.
-- **`write_phon_rule`** (Round 2) — for rule-writing questions.
+- **`write-phon-rule`** (Round 2) — for rule-writing questions.
   Scaffold the slashes/brackets distinction, the structural change,
   the environment, the natural-class generalization. **Bidirectional**:
   cover both writing-from-data (HW4) and applying-to-UR (Midterm 2
   review).
-- **`id_natural_class`** (Round 2) — for natural class questions
+- **`id-natural-class`** (Round 2) — for natural class questions
   (and embedded in every rule-writing question). Coach the feature
   analysis. The NARROWNESS test: "you've got a class that includes
   the targets, but does it include other sounds that *aren't* in
   the data? If yes, narrow it."
-- **`repair_misconceptions`** (Round 1, extended) — heavy use.
+- **`repair-miscon`** (Round 1, extended) — heavy use.
   Misconceptions to add: [i]/[ɪ] cross-linguistic error, allophone
   vs allomorph, slashes/brackets, phoneme labels, "free variation
   = allophone."
-- **`give-contrastive-hint`** (Round 1) — for differentiating
+- **`contrastive-hint`** (Round 1) — for differentiating
   overlapping from complementary distribution; for differentiating
   phoneme from allophone status.
 - **`escalate-hint-lvl`** (Round 1) — heavily used; HW4 is
   content-dense and students get stuck often. Pre-built scaffolds:
   "I can't find any pattern" → "Have you tried listing the
   environments individually?" → "What's left and right of [x]?"
-- **`validate_pre_knowledge`** — extend with phonetics features
+- **`validate-prereqs`** — extend with phonetics features
   refresher (place, manner, voicing for natural class reasoning).
-- **`diagnose_prerequisite_gaps`** — common HW4 gaps: phonemic
+- **`dx-prereq-gaps`** — common HW4 gaps: phonemic
   vs phonetic level, environment listing format, feature-based
   natural classes.
 

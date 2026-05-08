@@ -18,7 +18,7 @@ Days 6-7 of the course; Zsiga Ch. 4-5.
 
 Day 5 acoustics fundamentals (period, frequency, amplitude, F0,
 harmonics, formants, source-filter) and Days 1-3 consonant articulation
-are prerequisite and may be probed by `validate_pre_knowledge`.
+are prerequisite and may be probed by `validate-prereqs`.
 
 ## Learning Goals
 
@@ -271,25 +271,25 @@ A student on the right track but not yet there typically:
 
 ## Skills Relevant to This Assignment
 
-- **`read_acoustic_trace`** (Round 2) — workhorse skill for HW3.
+- **`read-acoustic-trace`** (Round 2) — workhorse skill for HW3.
   Should have sub-flows for: (a) reading a spectrum (peaks, F0
   via harmonic spacing, formants); (b) reading a spectrogram
   (formant patterns, consonant signatures, transitions);
   (c) marking segment boundaries on a waveform.
-- **`repair_misconceptions`** — fires on F0/F1, harmonic/formant,
+- **`repair-miscon`** — fires on F0/F1, harmonic/formant,
   F1↔height direction confusion, "amplitude is loudness"
   conflation, and the cardinal acoustic-misconception cluster.
-- **`give-contrastive-hint`** — for "high vs low F0," "front vs
+- **`contrastive-hint`** — for "high vs low F0," "front vs
   back via F2," "voiced vs voiceless via periodicity"
-- **`validate_pre_knowledge`** — extend probes to cover spectrogram
+- **`validate-prereqs`** — extend probes to cover spectrogram
   axes (does student know x is time, y is frequency, darkness is
   amplitude?), formant numbering (count up from bottom), source-
   filter independence
-- **`escalate_hint_level_gradually`** — fires on Q16
+- **`escalate-hint-lvl`** — fires on Q16
   (spectrogram-phrase matching) when stuck. Hint ladder: count
   syllables → identify nasals/fricatives/stops in each spectrogram
   → match by feature density → check formant transitions for POA
-- **`diagnose_prerequisite_gaps`** — common HW3 gaps: spectrogram
+- **`dx-prereq-gaps`** — common HW3 gaps: spectrogram
   axes, formant counting direction, harmonic-vs-formant distinction
 
 ## Reference Materials
@@ -317,7 +317,7 @@ A student on the right track but not yet there typically:
 - **Q16 (spectrogram-to-phrase matching) is the single highest-
   point question (6 pts).** Students who haven't internalized
   consonant signatures will guess. Worth a dedicated practice
-  ladder in `read_acoustic_trace`.
+  ladder in `read-acoustic-trace`.
 
 - **Q18 (waveform segment-boundary identification, 14 pts) is
   weighted as much as Q16.** This is a *separate* skill from
@@ -326,6 +326,6 @@ A student on the right track but not yet there typically:
   Worth its own practice ladder.
 
 - **The spectrum reading questions (Q7-Q15) are good targets for
-  `give-contrastive-hint`** between [ʌ] (cup) and other central
+  `contrastive-hint`** between [ʌ] (cup) and other central
   vowels, between male and female speakers, and between vowel
   pairs based on formant differences.

@@ -126,7 +126,7 @@ Assignment-specific patterns to watch for:
 
 - Students often confuse [θ] and [f] because they share voicing and
   manner — the only difference is place (dental vs. labiodental).
-  Q4 probes this, and it's a prime target for `give-contrastive-hint`.
+  Q4 probes this, and it's a prime target for `contrastive-hint`.
 - Students often confuse [ʃ] and [s] because of spelling overlap
   (*ship*, *nation*, *special* all use [ʃ] but look different in
   spelling).
@@ -180,7 +180,7 @@ A student on the right track but not yet there typically:
   what's the first sound, and is it voiced or voiceless?"
 - **Do not name the feature that distinguishes two confused sounds
   before the student does.** This is the explicit contract of
-  `give-contrastive-hint` — the student discovers the difference
+  `contrastive-hint` — the student discovers the difference
   through their own body.
 - **Do not use vocabulary the student hasn't encountered yet.** Terms
   like *distinctive feature*, *natural class*, or *minimal pair* are
@@ -190,22 +190,22 @@ A student on the right track but not yet there typically:
 
 ## Skills Relevant to This Assignment
 
-- **`give-contrastive-hint`** — the workhorse for Q5–Q10 (midsagittal
+- **`contrastive-hint`** — the workhorse for Q5–Q10 (midsagittal
   matching) and Q11 (feature-based matching). Fires whenever a student
   confuses two neighboring consonants. Especially useful for [θ]/[f],
   [ʃ]/[s], [p]/[b], [t]/[d], [k]/[g].
-- **`repair_misconceptions`** — fires on Q1 (orthography-pronunciation
+- **`repair-miscon`** — fires on Q1 (orthography-pronunciation
   mismatch) and any transcription question where the student's answer
   follows the spelling rather than the sound. Also fires on Q4 if the
   student picks "Affricate" for *think* (wrong — [θ] is a fricative).
-- **`escalate_hint_level_gradually`** — fires any time a student is
+- **`escalate-hint-lvl`** — fires any time a student is
   stuck after initial questioning. Especially useful on Q11, which is
   the highest-point single question (10 points) and requires
   combining feature descriptions with symbol knowledge.
-- **`validate_pre_knowledge`** — fires before the student begins the
+- **`validate-prereqs`** — fires before the student begins the
   assignment. Probes the Day 1-2 concepts (vocal tract anatomy,
   voicing) that HW1 presupposes.
-- **`diagnose_prerequisite_gaps`** — fires when a student is blocked
+- **`dx-prereq-gaps`** — fires when a student is blocked
   on a question and the tutor needs to find out *which* prior concept
   is missing (airflow? velum position? what alveolar means?).
 

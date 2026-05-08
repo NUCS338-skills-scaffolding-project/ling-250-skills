@@ -17,7 +17,7 @@ canvas_quiz: true
 Days 4-5 of the course; Zsiga Ch. 3.
 
 Days 1-3 anatomy, the IPA principle, and consonant articulation are
-prerequisite and may be probed by `validate_pre_knowledge`.
+prerequisite and may be probed by `validate-prereqs`.
 
 ## Learning Goals
 
@@ -202,7 +202,7 @@ Assignment-specific patterns to watch for:
   The [ə] choice conflates "mid" with "central" or assumes mid +
   unstressed = schwa. Correct reasoning: [i] is front, so staying
   front and going from high to mid lands at [e]. **Prime
-  `id_natural_class` moment.**
+  `id-natural-class` moment.**
 - **Q23 (cardinal vowels typology TF)**: students who think cardinals
   are the most common world vowels. The vast majority of inventories
   use sub/superset patterns of [i, e, u, o, a].
@@ -251,8 +251,8 @@ A student on the right track but not yet there typically:
   answer "the IPA for *enjoyed* is [ɛndʒɔɪd]."
 - **Do not directly identify a vowel from a feature description
   before the student walks through height → backness → rounding
-  → tense/lax** in order. This is the explicit `give_contrastive_hint`
-  and `id_natural_class` move.
+  → tense/lax** in order. This is the explicit `contrastive-hint`
+  and `id-natural-class` move.
 - **Do not name the feature that distinguishes two confused vowels
   before the student does.** Especially for [i]/[ɪ], [u]/[ʊ],
   [ɛ]/[æ], [ʌ]/[ə] — these are the workhorse contrastive pairs.
@@ -277,28 +277,28 @@ A student on the right track but not yet there typically:
 
 ## Skills Relevant to This Assignment
 
-- **`give-contrastive-hint`** — workhorse for tense/lax pairs
+- **`contrastive-hint`** — workhorse for tense/lax pairs
   ([i]/[ɪ], [u]/[ʊ], [eɪ]/[ɛ], [oʊ]/[ɔ]) and front/back contrasts.
   Especially useful for Q1-Q6 (multi-select feature identification).
-- **`id_natural_class`** (Round 2) — Q18-Q22 are the textbook use
+- **`id-natural-class`** (Round 2) — Q18-Q22 are the textbook use
   case. Students need to navigate the vowel feature space holding
   constants and changing one named feature.
-- **`probe_min_pair`** (Round 2) — minor use; mostly for tense/lax
+- **`probe-min-pair`** (Round 2) — minor use; mostly for tense/lax
   and front/back contrast cases ("can you think of a minimal pair
   that distinguishes [i] and [ɪ]?").
-- **`repair_misconceptions`** — fires on cardinal vowel typology
+- **`repair-miscon`** — fires on cardinal vowel typology
   errors (Q23-Q24), schwa/wedge inversions, frequency-amplitude
   conflation, F0/F1 confusion, and any spelling-driven transcription
   error.
-- **`escalate_hint_level_gradually`** — fires on Q26 (composed
+- **`escalate-hint-lvl`** — fires on Q26 (composed
   sentence transcription) when the student gets stuck after
   initial questioning. Hint ladder: "say the word slowly →
   identify the stressed syllable → identify the vowel quality
   at that syllable → match to vowel chart features."
-- **`validate_pre_knowledge`** — fires before the student begins.
+- **`validate-prereqs`** — fires before the student begins.
   Probes Days 1-3 anatomy/IPA principle plus Day 4 vowel chart
   structure.
-- **`diagnose_prerequisite_gaps`** — fires when the student is
+- **`dx-prereq-gaps`** — fires when the student is
   blocked on a question. Common gaps: vowel chart axis confusion,
   tense/lax binary, monophthong/diphthong distinction.
 
@@ -322,7 +322,7 @@ A student on the right track but not yet there typically:
 
 - **Q18-Q22 (vowel transformation under feature change) is the
   highest-leverage HW2 content for the new Round 2 skill
-  `id_natural_class`.** Students who don't internalize "hold
+  `id-natural-class`.** Students who don't internalize "hold
   constants, change one feature" will struggle with HW4 natural
   class identification and HW5 sonority hierarchy questions.
   Worth targeted pre-work using these as practice.

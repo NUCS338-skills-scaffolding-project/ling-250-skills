@@ -315,16 +315,16 @@ A student on the right track but not yet there typically:
 HW5 uses the Round 2 skills more concentrated than HW4 — the
 Maltese dataset is one extended problem.
 
-- **`analyze_dist`** (Round 2) — for Q1-Q4 (collecting environments
+- **`analyze-dist`** (Round 2) — for Q1-Q4 (collecting environments
   of [il-] vs [l-]). Same flow as HW4.
-- **`probe_min_pair`** (Round 2) — minor use; minimal pairs aren't
+- **`probe-min-pair`** (Round 2) — minor use; minimal pairs aren't
   central evidence type in HW5.
-- **`write_phon_rule`** (Round 2) — for Q6 and Q8 (dual UR rule
+- **`write-phon-rule`** (Round 2) — for Q6 and Q8 (dual UR rule
   formulations). Should specifically scaffold the
   /UR/ → [allomorph] / __ [environment] notation with environment
   terms drawn from a controlled vocabulary (onset, no-onset, coda,
   no-coda, sonorant, obstruent).
-- **`id_natural_class`** (Round 2) — Q11 (coronals) is the
+- **`id-natural-class`** (Round 2) — Q11 (coronals) is the
   textbook use case. The skill needs to handle the *narrowness*
   test — "you've got a class that includes the targets, but does
   it include other sounds that *aren't* in the data? If yes,
@@ -334,7 +334,7 @@ Maltese dataset is one extended problem.
   assign moras. For Maltese: list environments per allomorph →
   identify the syllable-structural property that differs →
   propose UR → propose rule.
-- **`repair-miscons`** (Round 1) — HW5-specific entries to add:
+- **`repair-miscon`** (Round 1) — HW5-specific entries to add:
   "wider natural class is always better" (Q11), "shorter allomorph
   is the UR" (Q10), "assimilation only changes one feature" (Q12),
   "speech errors can swap any segments" (Q15), "all coda Cs are
@@ -363,12 +363,12 @@ Maltese dataset is one extended problem.
   alternation. Particularly Q9-Q10 (UR comparison) and Q11
   (natural class).
 
-- **Q11 is the textbook `id_natural_class` test** — multiple
+- **Q11 is the textbook `id-natural-class` test** — multiple
   feature labels (sonorants, voiced) include the target sounds,
   but only "coronals" is the narrowest exhaustive class. The skill
   has a documented use case to design against.
 
-- **Q5-Q10 is the textbook `write_phon_rule` + UR-comparison
+- **Q5-Q10 is the textbook `write-phon-rule` + UR-comparison
   pattern.** Two URs given in parallel, two rule sets formulated,
   the student picks based on simplicity. Rare in the course —
   the cleanest single test of Occam's razor.

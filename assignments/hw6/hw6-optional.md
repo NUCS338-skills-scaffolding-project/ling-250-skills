@@ -1,7 +1,7 @@
 A 20-question optional Canvas quiz worth 40 points covering HW1-3 material: vowel and consonant identification, IPA-to-articulatory description matching, source-filter theory, formant-vowel mapping, minimal pairs, and spectrogram-based place-of-articulation reading. Used as a grade-replacement opportunity for students with low HW1-3 scores, or as a comprehensive HW1-3 mastery review.
 
 ---
-assignment_id: "hw6-optional"
+assignment_id: "ling250-makeup"
 assignment_name: "Make-up Homework (optional, covers HW1-3 territory)"
 course: "Ling 250 — Sound Patterns in Human Language"
 unit: "Days 1-7 (review)"
@@ -9,7 +9,7 @@ due_date: "End of quarter (see syllabus)"
 total_points: 40
 canvas_quiz: true
 optional: true
-purpose: "grade-replacement for lowest HW score; also serves as HW1-3 comprehensive mastery review"
+purpose: "grade-replacement for HW1, HW2, or HW3 lowest score; also serves as HW1-3 comprehensive mastery review"
 ---
 
 # Make-up Homework (Optional)
@@ -22,7 +22,8 @@ is a synthesis of the first half of the course.
 ## Purpose
 
 This assignment is **optional**. Students may submit it to replace
-their lowest HW score.
+their lowest score among HW1, HW2, or HW3 — the higher of the two
+scores will count.
 
 For a student preparing for Midterm 1 (Days 1-9 territory), this
 assignment serves as comprehensive review of HW1-3 mastery and is
@@ -159,17 +160,17 @@ A student on the right track but not yet there typically:
 
 The make-up HW exercises the full HW1-3 skill set:
 
-- **`give-contrastive-hint`** — for any vowel pair, consonant pair,
+- **`contrastive-hint`** — for any vowel pair, consonant pair,
   or articulatory feature contrast
-- **`repair-miscons`** — for the F1↔height confusion (especially
+- **`repair-miscon`** — for the F1↔height confusion (especially
   Q10), schwa/wedge inversion (Q4), and the spelling/sound
   conflation
-- **`validate-prereq`** — full HW1-3 prerequisite check
+- **`validate-prereqs`** — full HW1-3 prerequisite check
 - **`escalate-hint-lvl`** — for stuck students; especially on
   Q10, Q12, Q19, Q20 where formant-reading is involved
-- **`diagnose-prereq-gaps`** — common gaps: vowel chart axis
+- **`dx-prereq-gaps`** — common gaps: vowel chart axis
   convention, F1↔height direction, place-of-articulation features
-- **`read_acoustic_trace`** (Round 2) — for Q19, Q20 (formant
+- **`read-acoustic-trace`** (Round 2) — for Q19, Q20 (formant
   transitions, F1/F2 plot conventions)
 
 ## Reference Materials
@@ -191,7 +192,7 @@ The make-up HW exercises the full HW1-3 skill set:
 
 - **Lucille's one error (Q10) confirms F1↔height is the most
   recurring misconception** in this territory. Worth a dedicated
-  catalog entry and a high-priority `repair-miscons` flow.
+  catalog entry and a high-priority `repair-miscon` flow.
 
 - **The make-up format is gentler than HW1-3** — questions are
   more discrete (single answer or short multi-select), no
