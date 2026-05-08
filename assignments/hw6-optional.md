@@ -22,8 +22,7 @@ is a synthesis of the first half of the course.
 ## Purpose
 
 This assignment is **optional**. Students may submit it to replace
-their lowest score among HW1, HW2, or HW3 — the higher of the two
-scores will count.
+their lowest HW score.
 
 For a student preparing for Midterm 1 (Days 1-9 territory), this
 assignment serves as comprehensive review of HW1-3 mastery and is
