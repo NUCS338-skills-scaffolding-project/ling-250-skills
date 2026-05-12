@@ -19,6 +19,7 @@ trigger_signals:
   - "student-uncertain-about-distribution"
   - "data-shown-with-two-target-sounds"
   - "wrong-answer-from-incomplete-environment-listing"
+
 version: "0.1.0"
 python_entry: "logic.py"
 ---

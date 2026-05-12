@@ -251,7 +251,7 @@ A student on the right track but not yet there typically:
   answer "the IPA for *enjoyed* is [ɛndʒɔɪd]."
 - **Do not directly identify a vowel from a feature description
   before the student walks through height → backness → rounding
-  → tense/lax** in order. This is the explicit `contrastive-hint`
+  → tense/lax** in order. This is the explicit `give-contrastive-hint`
   and `id-natural-class` move.
 - **Do not name the feature that distinguishes two confused vowels
   before the student does.** Especially for [i]/[ɪ], [u]/[ʊ],
@@ -277,7 +277,7 @@ A student on the right track but not yet there typically:
 
 ## Skills Relevant to This Assignment
 
-- **`contrastive-hint`** — workhorse for tense/lax pairs
+- **`give-contrastive-hint`** — workhorse for tense/lax pairs
   ([i]/[ɪ], [u]/[ʊ], [eɪ]/[ɛ], [oʊ]/[ɔ]) and front/back contrasts.
   Especially useful for Q1-Q6 (multi-select feature identification).
 - **`id-natural-class`** (Round 2) — Q18-Q22 are the textbook use
